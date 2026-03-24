@@ -1,162 +1,65 @@
-body, html {
+body {
+  margin: 0;
   padding: 0;
-  margin: 0;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
 }
 
-div.wrapper {
-  font-family: 'Proxima Nova';
-  width: 900px;
+.container {
+  text-align: center;
+  padding: 50px;
+  color: white;
 }
 
-div.clearfix {
-  float: none;
-  clear: both;
-}
-
-div.back,
-div.forward,
-div.letter-wrapper {
-  float: left;
-}
-
-div.back,
-div.forward {
-  width: 15%;
-}
-
-div.back p,
-div.forward p {
-  top: 30%;
-  position: relative;
-  margin: 0;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-div.back p span,
-div.forward p span {
-  position: relative;
-  border-radius: 1em;
-  padding: .5em 1em;
-  margin-left: .5em;
-  margin-right: .5em;
-}
-
-
-div.back p:hover span,
-div.forward p:hover span {
-  background-color: rgb(214, 183, 232);
-}
-
-div.forward {
-  text-align: left;
-}
-
-div.back {
-  text-align: right;
-}
-
-div.letter-wrapper {
-  max-width: 630px;
-  width: 630px;
-  /*padding: 1em;*/
-}
-
-.cursive {
-  font-family: 'Dancing Script';
-  font-size: 1.25em;
+.title {
+  font-size: 3em;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
 }
 
 .letter {
-  display: none;
-  max-width: 100%;
-  border-radius: 1em;
-  position: relative;
-  padding: 1em 2em;
-  overflow: hidden;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  font-size: 1.3em;
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.6;
+  min-height: 150px;
 }
 
-.letter:nth-of-type(odd) {
-  background-color: rgba(232, 133, 135, .5);
-}
-
-.letter:nth-of-type(even) {
-  background-color: rgba(214, 183, 232, .5);
-}
-
-.letter.active {
-  display: block;
-}
-
-.letter div {
-  width: 100%;
-}
-
-.letter .body,
-.letter .writer,
-.letter .cursive {
-  z-index: 5;
-}
-
-.body {
+button {
+  margin-top: 30px;
+  padding: 12px 25px;
   font-size: 1em;
+  border: none;
+  border-radius: 25px;
+  background: white;
+  color: #ff4d6d;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.writer {
-  white-space: pre;
-  margin-top: .5em;
-  font-family: 'Dancing Script'
+button:hover {
+  transform: scale(1.1);
 }
-
-.writer:before {
-  content: "Love always,\A";
-  font
-}
-
 
 .heart {
-    position: absolute;
-    width: 100px !important;
-    height: 90px;
-    z-index: 0;
-    opacity: .4;
-    bottom: 10px;
-    right: 50px;
+  position: absolute;
+  color: red;
+  animation: float 5s linear infinite;
 }
-.heart:before,
-.heart:after {
-    position: absolute;
-    content: "";
-    left: 50px;
-    top: 0;
-    width: 50px;
-    height: 80px;
-    background: red;
-    -moz-border-radius: 50px 50px 0 0;
-    border-radius: 50px 50px 0 0;
-    -webkit-transform: rotate(-45deg) scale(2,2);
-       -moz-transform: rotate(-45deg) scale(2,2);
-        -ms-transform: rotate(-45deg) scale(2,2);
-         -o-transform: rotate(-45deg) scale(2,2);
-            transform: rotate(-45deg) scale(2,2);
-    -webkit-transform-origin: 0 100%;
-       -moz-transform-origin: 0 100%;
-        -ms-transform-origin: 0 100%;
-         -o-transform-origin: 0 100%;
-            transform-origin: 0 100%;
+
+@keyframes float {
+  from {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
 }
-.heart:after {
-    left: 0;
-    -webkit-transform: rotate(45deg) scale(2,2);
-       -moz-transform: rotate(45deg) scale(2,2);
-        -ms-transform: rotate(45deg) scale(2,2);
-         -o-transform: rotate(45deg) scale(2,2);
-            transform: rotate(45deg) scale(2,2);
-    -webkit-transform-origin: 100% 100%;
-       -moz-transform-origin: 100% 100%;
-        -ms-transform-origin: 100% 100%;
-         -o-transform-origin: 100% 100%;
-            transform-origin :100% 100%;
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
